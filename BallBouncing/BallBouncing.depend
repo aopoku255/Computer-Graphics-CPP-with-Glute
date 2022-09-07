@@ -1,6 +1,8 @@
 # depslib dependency file v1.0
-1662569316 source:c:\users\joy\documents\computergraphics\drawline\main.cpp
+1662574102 source:c:\users\joy\documents\computergraphics\ballbouncing\main.cpp
 	<GL/glut.h>
+	<cstdlib>
+	<cmath>
 
 1426349728 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\glut.h
 	"freeglut_std.h"

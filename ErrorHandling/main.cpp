@@ -1,5 +1,10 @@
-#include <windows.h>
+
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
+
 #include <stdlib.h>
 
 static int slices = 16;
@@ -25,7 +30,7 @@ static void display(void)
     const double a = t*90.0;
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,1,0);
+    glColor3d(1,0,0);
 
     glPushMatrix();
         glTranslated(-2.4,1.2,-6);
