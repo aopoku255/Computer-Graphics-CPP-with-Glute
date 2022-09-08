@@ -1,9 +1,9 @@
 #include <windows.h>
 #include <gl\glut.h>
-void Refresh_timer( int value )
+void Refresh_timer( int )
 {
      glutPostRedisplay();
-     glutTimerFunc( 500, Refresh_timer, 0);
+     glutTimerFunc(3000/60, Refresh_timer, 0);
 }
 void Display(void)
 {
@@ -31,7 +31,8 @@ void reshape (int w, int h)
     glMatrixMode (GL_PROJECTION);
     glLoadIdentity();
     // keep our world coordinate system constant
-    gluOrtho2D(0.0,160.0,0.0,120.0);
+    gluOrtho2D(-300,300,-300,300);
+    glMatrixMode(GL_MODELVIEW);
 }
 void init(void){
     glClearColor( 0.1, 0.1, 0.05, 0.0);
@@ -44,7 +45,7 @@ int main( int argc, char** argv )
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB); //uses two buffers ie. visible and RGB shows the colors
-    glutInitWindowSize(500,500);
+    glutInitWindowSize(300,300);
     glutInitWindowPosition(100, 100);
     glutCreateWindow("Colors window");
     init();

@@ -1,4 +1,4 @@
-
+#include <windows.h>
 #include <GL/glut.h>
 #include <cstdlib>
 #include <cmath>
@@ -19,7 +19,7 @@ void MyCircle2f(GLfloat centerx, GLfloat centery, GLfloat radius)
 
   glEnd();
 }
-int refreshMills = 10;
+int refreshMills = 1000/60;
 double count = 0.1;
 int factor = 1;
 void Timer(int value)
@@ -34,24 +34,25 @@ return randomColorNumber;
 }
 void Display(void)
 {
+
     glClear(GL_COLOR_BUFFER_BIT);
-    if( count < 0.0)
+    if( count < 10.0)
     factor = 1;
-    else if( count > 157.0)
+    else if( count > 100.0)
     factor = -1;
-    glColor3f(1.0, 0.4, 0.1);
+    glColor3f(randomColor(), randomColor(), randomColor());
     count = count + ( factor * 1);
     //cout << count << endl;
     glPushMatrix();
-    glTranslatef( count , 10, 0.0);
-    glColor3f(randomColor(), randomColor(), randomColor());
-    MyCircle2f(0.0,0.0, 15);
+    glTranslatef(80 , count, 0.0);
+    glColor3f(1.0, 0.6, 0.0);
+    MyCircle2f(0.0,5.0, 15);
     //glBegin(GL_POINTS);
     // Color the first point
     //glVertex2f(10.0, 10.0);
     //glEnd();
     glPopMatrix();
-    glFlush();
+    glutSwapBuffers();
 }
 void init(void){
 
@@ -69,8 +70,9 @@ int main(int argc, char *argv[])
     glutInit(&argc, argv);
     // BUFFER MODE IS ONLY SINGLE or SINGLE BUFFER MODE.
     // Colors will be defined in RGB Format.
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DOUBLE);
     glutInitWindowSize(320, 240);
+    glutInitWindowPosition(200, 200);
     glutCreateWindow("Bouncing Ball");
     init();
     glutDisplayFunc(Display);

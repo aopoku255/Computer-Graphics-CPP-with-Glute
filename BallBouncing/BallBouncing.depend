@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1662574102 source:c:\users\joy\documents\computergraphics\ballbouncing\main.cpp
+1662626033 source:c:\users\joy\documents\computergraphics\ballbouncing\main.cpp
 	<GL/glut.h>
 	<cstdlib>
 	<cmath>
