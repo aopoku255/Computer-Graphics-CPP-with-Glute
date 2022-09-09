@@ -1,9 +1,9 @@
 #include <GL/glut.h>
 #include <cstdlib>
-void Refresh_timer( int value )
+void Refresh_timer( int )
 {
      glutPostRedisplay();
-     glutTimerFunc( 200, Refresh_timer, 0);
+     glutTimerFunc( 1000, Refresh_timer, 0);
 }
 void display()
 {
@@ -24,7 +24,7 @@ int main( int argc, char** argv )
      glutInitWindowSize( 600, 400 );
      glutCreateWindow( "Computer" );
      glutDisplayFunc( display );
-     glutTimerFunc( 50, Refresh_timer, 0 );
+     glutTimerFunc( 0, Refresh_timer, 0 );
      glutMainLoop();
      return 0;
 }

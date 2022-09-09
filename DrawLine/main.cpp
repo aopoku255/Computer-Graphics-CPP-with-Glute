@@ -67,7 +67,7 @@ case -1:
 
 int main(int argc, char * argv[]){
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DOUBLE);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(200, 200);
     glutInitWindowSize(300, 300);
     glutCreateWindow("Draw Line");

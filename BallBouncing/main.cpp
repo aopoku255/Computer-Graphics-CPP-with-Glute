@@ -32,14 +32,14 @@ float randomColor(void)
 float randomColorNumber = static_cast<double> (rand()) / static_cast<double>(RAND_MAX);
 return randomColorNumber;
 }
-void Display(void)
+void display(void)
 {
-
+.
     glClear(GL_COLOR_BUFFER_BIT);
     if( count < 10.0)
     factor = 1;
     else if( count > 100.0)
-    factor = -1;
+    factor = -3;
     glColor3f(randomColor(), randomColor(), randomColor());
     count = count + ( factor * 1);
     //cout << count << endl;
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     glutInitWindowPosition(200, 200);
     glutCreateWindow("Bouncing Ball");
     init();
-    glutDisplayFunc(Display);
+    glutDisplayFunc(display);
     glutTimerFunc(0, Timer, 0);
     glutMainLoop();
     return 0;
